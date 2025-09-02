@@ -16,12 +16,33 @@ int main()
 int NumberOfSweets, NumberOfKids, NumberOfSweetsPerCapita, NumberOfLeftOvers;
 
 // Pyydetään käyttäjää antamaan karkkien määrä
-printf("Enter NumberOfSweets: ");
-scanf("%d", &NumberOfSweets);
+do {
+    printf("Enter number of sweets: ");
+    scanf("%d", &NumberOfSweets);
+
+    if (NumberOfSweets <= 0) {
+        printf("Please enter a number greater than zero!\n\n");
+    }
+} while (NumberOfSweets <= 0);
+
+
+// OLD CODE: printf("Enter NumberOfSweets: ");
+// OLD CODE: scanf("%d", &NumberOfSweets);
 
 // Pyydetään käyttäjää antamaan lasten määrä
-printf("Enter NumberOfKids: ");
-scanf("%d", &NumberOfKids);
+
+do {
+    printf("Enter number of kids: ");
+    scanf("%d", &NumberOfKids);
+
+    if (NumberOfKids <= 0) {
+        printf("Please enter a number greater than zero!\n\n");
+    }
+} while (NumberOfKids <= 0);
+
+
+// OLD CODE: printf("Enter NumberOfKids: ");
+// OLD CODE: scanf("%d", &NumberOfKids);
 
 // Lasketaan kuinka monta karkkia tulee per lapsi
 NumberOfSweetsPerCapita = NumberOfSweets / NumberOfKids;
@@ -30,7 +51,7 @@ NumberOfSweetsPerCapita = NumberOfSweets / NumberOfKids;
 NumberOfLeftOvers = NumberOfSweets % NumberOfKids;
 
 // Tulostetaan käyttäjän syöttämät tiedot sekä laskennan tulokset
-printf("\n\n\nNumber Of Sweets:%d \nNumber Of Kids:%d \nNumber Of Sweets Per Capita:%d \nNumber Of LeftOvers:%d", NumberOfSweets, NumberOfKids, NumberOfSweetsPerCapita, NumberOfLeftOvers);
+printf("\n\n\nNumber Of Sweets:%d \nNumber Of Kids:%d \nNumber Of Sweets Per Capita:%d \nNumber Of Left Overs:%d", NumberOfSweets, NumberOfKids, NumberOfSweetsPerCapita, NumberOfLeftOvers);
 
 
     return 0;
