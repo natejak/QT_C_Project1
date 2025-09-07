@@ -6,12 +6,22 @@
  *
  * Tekijä: Kajetan Zelech-Alatarvas
  * Data: 01.09.2025
+ * Last Update: 2.09.2025
+ * v.1.01_2025_09_02- Added loops, to check if provided by user value is higher than 0.
  */
 
 #include <stdio.h> // Tämä on käsky esiprosessorille
 
+// Cleaner
+void clearInputBuffer(void) {
+    int c;
+    while ((c = getchar()) != '\n' && c != EOF) { }
+}
+
+// Main program
 int main()
 {
+
 // muuttujien määrittely
 int NumberOfSweets, NumberOfKids, NumberOfSweetsPerCapita, NumberOfLeftOvers;
 
@@ -22,12 +32,9 @@ do {
 
     if (NumberOfSweets <= 0) {
         printf("Please enter a number greater than zero!\n\n");
+        clearInputBuffer(); // Cleaning Buffer
     }
 } while (NumberOfSweets <= 0);
-
-
-// OLD CODE: printf("Enter NumberOfSweets: ");
-// OLD CODE: scanf("%d", &NumberOfSweets);
 
 // Pyydetään käyttäjää antamaan lasten määrä
 
@@ -37,12 +44,9 @@ do {
 
     if (NumberOfKids <= 0) {
         printf("Please enter a number greater than zero!\n\n");
+        clearInputBuffer(); // Cleaning Buffer
     }
 } while (NumberOfKids <= 0);
-
-
-// OLD CODE: printf("Enter NumberOfKids: ");
-// OLD CODE: scanf("%d", &NumberOfKids);
 
 // Lasketaan kuinka monta karkkia tulee per lapsi
 NumberOfSweetsPerCapita = NumberOfSweets / NumberOfKids;
